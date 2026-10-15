@@ -1,0 +1,834 @@
+
+/* ==========================================
+   ANNABELLA'S DIGITAL WORLD
+   Fairytale / Princess / Dreamy Portfolio
+   ========================================== */
+
+
+/* 1. COLOUR PALETTE & BASIC SETTINGS
+   设置整个网站的基础颜色和字体 */
+
+:root {
+    --pink: #f2c9d2;
+    --pink-light: #fff0f3;
+    --pink-deep: #c97995;
+
+    --lavender: #e9ddf7;
+    --lavender-deep: #a995ce;
+
+    --cream: #fff8f3;
+    --white: #ffffff;
+
+    --gold: #c8a35f;
+    --gold-light: #e0bd78;
+
+    --text: #4f3d49;
+    --text-light: #806d7a;
+    --border: #eedde3;
+
+    --shadow: 0 12px 35px rgba(140, 91, 115, 0.12);
+}
+
+
+/* 2. RESET
+   让不同浏览器的基础排版更统一 */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 25px;
+}
+
+body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--text);
+
+    font-family:
+        "Trebuchet MS",
+        Arial,
+        sans-serif;
+
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+p {
+    margin-top: 0;
+}
+
+::selection {
+    background: var(--pink);
+    color: var(--text);
+}
+
+
+/* 3. NAVIGATION
+   顶部导航栏 */
+
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.brand {
+    color: var(--pink-deep);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.topbar-note {
+    color: var(--text-light);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.nav-link {
+    padding: 9px 17px;
+
+    border: 1px solid var(--pink-deep);
+    border-radius: 30px;
+
+    color: var(--pink-deep);
+    font-size: 12px;
+    font-weight: bold;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.nav-link:hover {
+    background: var(--pink-deep);
+    color: var(--white);
+    transform: translateY(-2px);
+}
+
+
+/* 4. HERO / HOMEPAGE
+   首页的大背景与布局 */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+
+    padding: 20px 7% 25px;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(242, 201, 210, 0.45),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(233, 221, 247, 0.7),
+            transparent 35%
+        ),
+        var(--cream);
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+
+    align-items: center;
+    gap: 55px;
+
+    max-width: 1200px;
+    margin: 0 auto;
+
+    padding: 75px 0 85px;
+}
+
+.hero-copy {
+    position: relative;
+    z-index: 1;
+}
+
+.eyebrow {
+    color: var(--pink-deep);
+
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.hero h1 {
+    margin: 24px 0;
+
+    color: var(--text);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(45px, 7vw, 86px);
+    font-weight: normal;
+    line-height: 1.03;
+    letter-spacing: -3px;
+
+    overflow-wrap: anywhere;
+}
+
+.title-number {
+    display: block;
+    color: var(--pink-deep);
+    font-style: italic;
+}
+
+.title-dot {
+    color: var(--gold);
+}
+
+.intro {
+    max-width: 440px;
+    margin-bottom: 28px;
+
+    color: var(--text-light);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.text-link {
+    display: inline-block;
+
+    padding: 12px 23px;
+
+    border-radius: 30px;
+    background: var(--pink-deep);
+
+    color: var(--white);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.text-link:hover {
+    background: #ad617f;
+    transform: translateY(-3px);
+}
+
+.text-link span {
+    color: var(--white);
+}
+
+.hero-note {
+    margin-top: 35px;
+
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+
+/* 5. HERO IMAGE
+   首页图片框 */
+
+.hero-art {
+    position: relative;
+    max-width: 470px;
+    width: 100%;
+    justify-self: center;
+}
+
+.art-frame {
+    padding: 12px;
+
+    border: 1px solid #e8c7d2;
+    border-radius: 220px 220px 25px 25px;
+
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: var(--shadow);
+
+    transform: rotate(1.5deg);
+}
+
+.art-frame img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+
+    border-radius: 210px 210px 18px 18px;
+    background: var(--lavender);
+}
+
+.art-label {
+    display: block;
+    margin-top: 22px;
+
+    color: var(--text-light);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+
+.art-index {
+    position: absolute;
+    right: -10px;
+    top: 20px;
+
+    display: grid;
+    place-items: center;
+
+    width: 55px;
+    height: 55px;
+
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+
+    background: var(--white);
+    color: var(--gold);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 13px;
+}
+
+
+/* 6. DECORATIVE STICKER
+   首页装饰圆章 */
+
+.hero-sticker {
+    position: absolute;
+    right: 42%;
+    bottom: 100px;
+    z-index: 2;
+
+    display: grid;
+    place-content: center;
+
+    width: 95px;
+    height: 95px;
+
+    border: 1px solid var(--gold-light);
+    border-radius: 50%;
+
+    background: var(--white);
+    color: var(--pink-deep);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 12px;
+    line-height: 1.4;
+    text-align: center;
+
+    box-shadow: var(--shadow);
+    transform: rotate(-10deg);
+}
+
+
+/* 7. HERO BOTTOM LINE
+   首页最底部的小字 */
+
+.hero-bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding-top: 18px;
+    border-top: 1px solid var(--border);
+
+    color: var(--text-light);
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+
+/* 8. SHARED SECTION SETTINGS
+   所有主要板块共用的排版 */
+
+.section {
+    padding: 95px 10%;
+    scroll-margin-top: 20px;
+}
+
+.section-label {
+    margin-bottom: 12px;
+
+    color: var(--pink-deep);
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.section h2 {
+    margin: 10px 0 28px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(34px, 5vw, 58px);
+    font-weight: normal;
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.section h2 span {
+    color: var(--pink-deep);
+    font-style: italic;
+}
+
+
+/* 9. ABOUT ME
+   个人介绍板块 */
+
+.about {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+
+    align-items: center;
+    gap: 65px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f3 0%,
+            #fff8f3 55%,
+            #f3ebfb 100%
+        );
+}
+
+.about-text > p:not(.section-label):not(.about-signature) {
+    max-width: 600px;
+    color: var(--text-light);
+    font-size: 15px;
+}
+
+.about-signature {
+    margin-top: 30px;
+
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+
+/* 10. ABOUT ME PHOTO
+   个人照片 */
+
+.about-photo {
+    min-width: 0;
+    margin: 0;
+}
+
+.portrait-frame {
+    padding: 10px;
+
+    border: 1px solid #e7cad4;
+    border-radius: 180px 180px 18px 18px;
+
+    background: var(--white);
+    box-shadow: var(--shadow);
+
+    transform: rotate(-2deg);
+}
+
+.portrait-frame img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+
+    border-radius: 170px 170px 12px 12px;
+    background: var(--lavender);
+}
+
+.about-photo figcaption {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 22px;
+
+    color: var(--text-light);
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+
+/* 11. INTERESTS HEADING
+   兴趣板块的标题 */
+
+.interests {
+    background: var(--cream);
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 35px;
+
+    margin-bottom: 38px;
+}
+
+.heading-aside {
+    max-width: 260px;
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+
+/* 12. INTEREST CARDS
+   兴趣卡片 */
+
+.interest-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.interest-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-height: 225px;
+    padding: 26px;
+
+    border: 1px solid rgba(201, 121, 149, 0.22);
+    border-radius: 22px;
+
+    box-shadow: 0 6px 20px rgba(140, 91, 115, 0.06);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.interest-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+}
+
+.interest-card.art {
+    background: #fff0f3;
+}
+
+.interest-card.music {
+    background: #f0e8fb;
+}
+
+.interest-card.fashion {
+    background: #fff5e4;
+}
+
+.interest-card.travel {
+    background: #eaf1e5;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-number {
+    color: var(--text-light);
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.card-symbol {
+    color: var(--pink-deep);
+    font-size: 25px;
+}
+
+.interest-card h3 {
+    margin: 24px 0 8px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.interest-card p {
+    max-width: 320px;
+    margin-bottom: 0;
+
+    color: var(--text-light);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* 13. WEEKLY REFLECTIONS
+   学术反思：保持清晰易读 */
+
+.reflections {
+    background:
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(233, 221, 247, 0.75),
+            transparent 35%
+        ),
+        #fff0f3;
+}
+
+.reflection-heading {
+    max-width: 700px;
+    margin-bottom: 48px;
+}
+
+.reflection-intro {
+    max-width: 480px;
+    color: var(--text-light);
+}
+
+.reflection-entry {
+    padding: 27px 0;
+    border-top: 1px solid #e5cbd5;
+}
+
+.week {
+    margin-bottom: 8px;
+
+    color: var(--pink-deep);
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.reflection-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.reflection-title h3 {
+    margin: 6px 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(21px, 3vw, 30px);
+    font-weight: normal;
+}
+
+.reflection-title span {
+    flex-shrink: 0;
+    color: var(--gold);
+}
+
+.reflection-description {
+    max-width: 720px;
+    color: var(--text-light);
+    font-size: 14px;
+}
+
+
+/* 14. FOOTER
+   页面底部 */
+
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+
+    padding: 30px 7%;
+
+    border-top: 1px solid var(--border);
+    background: var(--white);
+
+    color: var(--text-light);
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.site-footer p {
+    margin: 0;
+    text-align: center;
+}
+
+.footer-brand {
+    color: var(--pink-deep);
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.back-to-top {
+    color: var(--pink-deep);
+}
+
+
+/* 15. ACCESSIBILITY
+   尊重用户的减少动态效果设置 */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+
+/* 16. TABLET & MOBILE
+   让网页在手机上也能正常显示 */
+
+@media (max-width: 800px) {
+    .hero {
+        padding-right: 6%;
+        padding-left: 6%;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 42px;
+        padding: 55px 0 65px;
+    }
+
+    .hero-copy {
+        max-width: 600px;
+    }
+
+    .hero-art {
+        max-width: 420px;
+    }
+
+    .hero-sticker {
+        right: 8%;
+        bottom: 38%;
+        width: 78px;
+        height: 78px;
+        font-size: 10px;
+    }
+
+    .section {
+        padding: 70px 7%;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-photo {
+        width: 100%;
+        max-width: 430px;
+        justify-self: center;
+    }
+
+    .section-heading {
+        display: block;
+    }
+
+    .heading-aside {
+        margin-top: 18px;
+    }
+}
+
+
+@media (max-width: 520px) {
+    body {
+        font-size: 15px;
+    }
+
+    .topbar {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .brand {
+        font-size: 16px;
+    }
+
+    .topbar-note {
+        display: none;
+    }
+
+    .nav-link {
+        padding: 7px 12px;
+        font-size: 10px;
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 13vw, 62px);
+        letter-spacing: -2px;
+    }
+
+    .hero-grid {
+        padding-top: 45px;
+    }
+
+    .hero-sticker {
+        right: 5%;
+        bottom: 39%;
+        width: 65px;
+        height: 65px;
+        font-size: 9px;
+    }
+
+    .hero-bottom {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 8px;
+    }
+
+    .section {
+        padding: 55px 6%;
+    }
+
+    .section h2 {
+        font-size: 36px;
+    }
+
+    .interest-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .interest-card {
+        min-height: 185px;
+        padding: 22px;
+    }
+
+    .reflection-title {
+        align-items: flex-start;
+    }
+
+    .reflection-title h3 {
+        font-size: 22px;
+    }
+
+    .site-footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
