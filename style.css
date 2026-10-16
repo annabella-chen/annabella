@@ -1,13 +1,4 @@
 
-/* ==========================================
-   ANNABELLA'S DIGITAL WORLD
-   Fairytale / Princess / Dreamy Portfolio
-   ========================================== */
-
-
-/* 1. COLOUR PALETTE & BASIC SETTINGS
-   设置整个网站的基础颜色和字体 */
-
 :root {
     --pink: #f2c9d2;
     --pink-light: #fff0f3;
@@ -31,8 +22,6 @@
 
 
 /* 2. RESET
-   让不同浏览器的基础排版更统一 */
-
 * {
     box-sizing: border-box;
 }
@@ -78,8 +67,6 @@ p {
 
 
 /* 3. NAVIGATION
-   顶部导航栏 */
-
 .topbar {
     display: flex;
     justify-content: space-between;
@@ -130,7 +117,6 @@ p {
 
 
 /* 4. HERO / HOMEPAGE
-   首页的大背景与布局 */
 
 .hero {
     position: relative;
@@ -251,7 +237,6 @@ p {
 
 
 /* 5. HERO IMAGE
-   首页图片框 */
 
 .hero-art {
     position: relative;
@@ -315,7 +300,6 @@ p {
 
 
 /* 6. DECORATIVE STICKER
-   首页装饰圆章 */
 
 .hero-sticker {
     position: absolute;
@@ -346,7 +330,6 @@ p {
 
 
 /* 7. HERO BOTTOM LINE
-   首页最底部的小字 */
 
 .hero-bottom {
     display: flex;
@@ -363,7 +346,6 @@ p {
 
 
 /* 8. SHARED SECTION SETTINGS
-   所有主要板块共用的排版 */
 
 .section {
     padding: 95px 10%;
@@ -396,8 +378,6 @@ p {
 
 
 /* 9. ABOUT ME
-   个人介绍板块 */
-
 .about {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
@@ -431,7 +411,6 @@ p {
 
 
 /* 10. ABOUT ME PHOTO
-   个人照片 */
 
 .about-photo {
     min-width: 0;
@@ -475,7 +454,6 @@ p {
 
 
 /* 11. INTERESTS HEADING
-   兴趣板块的标题 */
 
 .interests {
     background: var(--cream);
@@ -498,7 +476,6 @@ p {
 
 
 /* 12. INTEREST CARDS
-   兴趣卡片 */
 
 .interest-grid {
     display: grid;
@@ -581,7 +558,6 @@ p {
 
 
 /* 13. WEEKLY REFLECTIONS
-   学术反思：保持清晰易读 */
 
 .reflections {
     background:
@@ -645,7 +621,6 @@ p {
 
 
 /* 14. FOOTER
-   页面底部 */
 
 .site-footer {
     display: flex;
@@ -683,7 +658,6 @@ p {
 
 
 /* 15. ACCESSIBILITY
-   尊重用户的减少动态效果设置 */
 
 @media (prefers-reduced-motion: reduce) {
     html {
@@ -700,7 +674,6 @@ p {
 
 
 /* 16. TABLET & MOBILE
-   让网页在手机上也能正常显示 */
 
 @media (max-width: 800px) {
     .hero {
