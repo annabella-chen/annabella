@@ -1,4 +1,3 @@
-
 :root {
     --pink: #f2c9d2;
     --pink-light: #fff0f3;
@@ -21,7 +20,7 @@
 }
 
 
-/* 2. RESET
+/* 2. RESET */
 * {
     box-sizing: border-box;
 }
@@ -66,7 +65,7 @@ p {
 }
 
 
-/* 3. NAVIGATION
+/* 3. NAVIGATION */
 .topbar {
     display: flex;
     justify-content: space-between;
@@ -116,7 +115,7 @@ p {
 }
 
 
-/* 4. HERO / HOMEPAGE
+/* 4. HERO / HOMEPAGE */
 
 .hero {
     position: relative;
@@ -236,7 +235,7 @@ p {
 }
 
 
-/* 5. HERO IMAGE
+/* 5. HERO IMAGE */
 
 .hero-art {
     position: relative;
@@ -299,7 +298,7 @@ p {
 }
 
 
-/* 6. DECORATIVE STICKER
+/* 6. DECORATIVE STICKER */
 
 .hero-sticker {
     position: absolute;
@@ -329,7 +328,7 @@ p {
 }
 
 
-/* 7. HERO BOTTOM LINE
+/* 7. HERO BOTTOM LINE */
 
 .hero-bottom {
     display: flex;
@@ -345,7 +344,7 @@ p {
 }
 
 
-/* 8. SHARED SECTION SETTINGS
+/* 8. SHARED SECTION SETTINGS */
 
 .section {
     padding: 95px 10%;
@@ -377,7 +376,7 @@ p {
 }
 
 
-/* 9. ABOUT ME
+/* 9. ABOUT ME */
 .about {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
@@ -410,7 +409,7 @@ p {
 }
 
 
-/* 10. ABOUT ME PHOTO
+/* 10. ABOUT ME PHOTO */
 
 .about-photo {
     min-width: 0;
@@ -453,7 +452,7 @@ p {
 }
 
 
-/* 11. INTERESTS HEADING
+/* 11. INTERESTS HEADING */
 
 .interests {
     background: var(--cream);
@@ -475,7 +474,7 @@ p {
 }
 
 
-/* 12. INTEREST CARDS
+/* 12. INTEREST CARDS */
 
 .interest-grid {
     display: grid;
@@ -557,7 +556,7 @@ p {
 }
 
 
-/* 13. WEEKLY REFLECTIONS
+/* 13. WEEKLY REFLECTIONS */
 
 .reflections {
     background:
@@ -620,7 +619,7 @@ p {
 }
 
 
-/* 14. FOOTER
+/* 14. FOOTER */
 
 .site-footer {
     display: flex;
@@ -657,7 +656,7 @@ p {
 }
 
 
-/* 15. ACCESSIBILITY
+/* 15. ACCESSIBILITY */
 
 @media (prefers-reduced-motion: reduce) {
     html {
@@ -673,7 +672,7 @@ p {
 }
 
 
-/* 16. TABLET & MOBILE
+/* 16. TABLET & MOBILE */
 
 @media (max-width: 800px) {
     .hero {
