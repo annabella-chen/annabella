@@ -2,6 +2,7 @@
     --muted:#7c6b72;
     --text:#5b484e;
     --text-light:#928289;
+    --accent:#b88c98;
 }
 *{
     margin:0;
@@ -60,7 +61,7 @@ a{
     margin:0 auto 40px;
 }
 .eyebrow{
-    color:#b88c98;
+    color:var(--accent);
     letter-spacing:2px;
     margin-bottom:8px;
 }
@@ -76,7 +77,7 @@ a{
 }
 .text-link{
     display:inline-block;
-    color:#b88c98;
+    color:var(--accent);
     margin-bottom:16px;
 }
 .hero-note{
@@ -121,7 +122,7 @@ h2{
     font-weight:normal;
 }
 h2 span{
-    color:#b88c98;
+    color:var(--accent);
 }
 
 /* === ABOUT === */
@@ -139,7 +140,7 @@ h2 span{
     margin-top:20px;
     font-size:13px;
     letter-spacing:1px;
-    color:#b88c98;
+    color:var(--accent);
 }
 .portrait-frame img{
     width:100%;
@@ -191,89 +192,96 @@ h2 span{
     color:var(--muted);
 }
 
-/* ========== REFLECTIONS｜严格复刻参考图样式 ========== */
+/* ========== BOOKLET REFLECTIONS 圆润书签版 ========== */
 .reflection-heading{
     max-width:720px;
     margin-bottom:40px;
 }
-.reflection-wrap{
+.booklet-container{
     position:relative;
     max-width:1040px;
     margin:0 auto;
-    /* 外层：粉紫柔和径向渐变底板，对应参考图背景 */
+}
+.booklet{
     background: radial-gradient(circle at center, #fff0ef, #f2e6f2);
     border-radius:24px;
-    padding:42px;
-    box-shadow: 0 18px 45px rgba(162,124,140,0.1);
+    padding:44px;
+    position:relative;
 }
-.reflection-content-card{
+.booklet-inner{
     background-color:#fff9f4;
     border-radius:18px;
     padding:48px;
-    min-height:640px;
-    box-shadow: 0 12px 30px rgba(145,112,120,0.08);
+    min-height:620px;
+    box-shadow: 0 6px 18px rgba(145,112,120,0.05);
 }
-.reflection-page{
+.booklet-page{
     display:none;
-    animation: fadeIn 0.3s ease;
+    animation: softFade 0.32s ease;
 }
-.reflection-page.active{
+.booklet-page.active{
     display:block;
 }
-@keyframes fadeIn{
-    from{opacity:0;transform:translateY(8px);}
-    to{opacity:1;transform:translateY(0);}
+@keyframes softFade{
+    from{opacity:0; transform:translateY(6px);}
+    to{opacity:1; transform:translateY(0);}
 }
-.reflection-page h3{
+.booklet-page h3{
     font-size:clamp(22px, 2.4vw,28px);
     font-family:Georgia, serif;
     color:#58434a;
     margin-bottom:24px;
     font-weight:normal;
 }
-.reflection-page p{
+.reflection-description{
     font-size:15px;
     line-height:1.8;
     color:#6c5c62;
     margin-bottom:18px;
 }
-.reflection-img{
+.booklet-image{
     margin-top:30px;
 }
-.reflection-img img{
+.booklet-image img{
     width:100%;
     border-radius:14px;
-    box-shadow:0 10px 24px rgba(130,98,105,0.12);
+    box-shadow:0 8px 20px rgba(130,98,105,0.10);
 }
-/* 右侧悬浮书签标签组 */
-.reflection-tabs{
+.booklet-image span{
+    display:block;
+    margin-top:8px;
+    font-size:13px;
+    color:#87747a;
+}
+/* 右侧书签标签 */
+.booklet-tabs{
     position:absolute;
     top:50%;
     transform:translateY(-50%);
-    right:-34px;
+    right:-32px;
     display:flex;
     flex-direction:column;
     gap:14px;
 }
-.reflection-tab{
+.booklet-tab{
     width:110px;
     padding:16px 10px;
     border:none;
     border-radius:0 14px 14px 0;
-    background:var(--tab);
+    background:var(--tab-color);
     font-family:Georgia, serif;
     font-size:14px;
     color:#58434a;
     text-align:left;
     cursor:pointer;
     transition: all 0.25s ease;
-    box-shadow:0 6px 14px rgba(130,98,105,0.09);
+    box-shadow:0 5px 12px rgba(130,98,105,0.08);
 }
-.reflection-tab.active{
+.booklet-tab.active{
     transform:translateX(-12px);
-    box-shadow:0 12px 24px rgba(130,98,105,0.16);
+    box-shadow:0 10px 20px rgba(130,98,105,0.14);
 }
-.reflection-tab:hover:not(.active){
+.booklet-tab:hover:not(.active){
     transform:translateX(-5px);
 }
 
@@ -293,7 +301,7 @@ h2 span{
 .back-to-top{
     display:inline-block;
     margin-top:10px;
-    color:#b88c98;
+    color:var(--accent);
 }
 
 /* === 移动端适配 === */
@@ -304,14 +312,14 @@ h2 span{
     .section-heading{flex-direction:column;align-items:flex-start;}
     .main-nav-group{margin-left:unset;width:100%;justify-content:center;}
 
-    .reflection-wrap{
+    .booklet{
         padding:26px;
     }
-    .reflection-content-card{
+    .booklet-inner{
         padding:30px 24px;
         min-height:480px;
     }
-    .reflection-tabs{
+    .booklet-tabs{
         position:static;
         transform:none;
         flex-direction:row;
@@ -319,24 +327,24 @@ h2 span{
         margin-top:24px;
         justify-content:center;
     }
-    .reflection-tab{
+    .booklet-tab{
         width:auto;
         border-radius:12px;
         text-align:center;
         padding:12px 14px;
     }
-    .reflection-tab.active{
+    .booklet-tab.active{
         transform:translateY(-6px);
     }
-    .reflection-tab:hover:not(.active){
+    .booklet-tab:hover:not(.active){
         transform:translateY(-3px);
     }
 }
 @media(max-width:520px){
-    .reflection-content-card{
+    .booklet-inner{
         padding:22px 18px;
     }
-    .reflection-tab{
+    .booklet-tab{
         font-size:12px;
         padding:10px 8px;
     }
