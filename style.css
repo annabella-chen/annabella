@@ -313,11 +313,10 @@ p {
     font-size:14px;
 }
 
-/* Reflections Accordion 互斥手风琴 */
+/* ========== 小册子+侧边彩虹索引标签 核心样式 ========== */
 .reflections {
     background: radial-gradient(circle at 100% 0%, rgba(229,223,240,0.7), transparent 35%), var(--rose-light);
 }
-
 .reflection-heading {
     max-width:720px;
     margin-bottom:50px;
@@ -327,73 +326,77 @@ p {
     color:var(--muted);
 }
 
-.reflection-accordion {
-    border-top:1px solid var(--line);
-}
-.reflection-item {
-    border-bottom:1px solid var(--line);
-}
-.reflection-summary {
-    list-style:none;
-    padding:28px 0;
-    cursor:pointer;
-}
-.reflection-summary::-webkit-details-marker {display:none;}
-.reflection-summary:hover h3 {
-    color:var(--rose);
-}
-.reflection-content {
-    padding:0 0 28px 0;
-}
-.reflection-content p {
-    margin:0 0 14px;
-}
-.reflection-title {
+.booklet-container {
+    position: relative;
+    max-width:900px;
+    margin:0 auto;
     display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:20px;
-}
-.reflection-title::after {
-    content:" ↷";
-    color:var(--rose);
-    font-size:14px;
-    display:inline-block;
-    transition:transform 0.22s ease;
-}
-.reflection-item[open] .reflection-title::after {
-    transform: rotate(180deg);
-}
-.week {
-    margin-bottom:8px;
-    color:var(--rose);
-    font-size:10px;
-    letter-spacing:2px;
-}
-.reflection-title h3 {
-    margin:0;
-    font-family:Georgia,serif;
-    font-size: clamp(20px,3vw,29px);
-    font-weight:normal;
-}
-.reflection-title span {
-    color:var(--gold);
-}
-.reflection-description {
-    max-width:740px;
-    color:var(--muted);
-    font-size:14px;
 }
 
-/* Justify text */
-.reflection-description,
-.about-text p:not(.section-label):not(.about-signature),
-.intro,
-.heading-aside,
-.reflection-intro,
-.interest-card p {
+.booklet {
+    flex-grow:1;
+    background:#fff;
+    min-height:520px;
+    padding:40px;
+    border-radius:16px 4px 4px 16px;
+    box-shadow: var(--shadow-subtle);
+    position:relative;
+    z-index:1;
+}
+
+.booklet-page {
+    display:none;
+}
+.booklet-page.active {
+    display:block;
+    animation: fadeIn 0.35s ease;
+}
+@keyframes fadeIn {
+    from {opacity:0; transform: translateY(8px);}
+    to {opacity:1; transform: translateY(0);}
+}
+.booklet-page h3 {
+    font-family:Georgia,serif;
+    color:var(--warm-grey);
+    margin-top:0;
+    margin-bottom:20px;
+}
+.reflection-description {
+    color:var(--muted);
+    font-size:14px;
     text-align: justify;
     text-justify: inter-word;
+    margin:0 0 14px;
+}
+
+/* 右侧伸出来的彩虹书签标签 */
+.booklet-tabs {
+    position:relative;
+    width:90px;
+    margin-left:-2px;
+}
+.booklet-tab {
+    display:block;
+    width:80px;
+    padding:12px 6px;
+    margin:14px 0;
+    border:none;
+    border-radius: 0 10px 10px 0;
+    background: var(--tab-color);
+    font-family:Georgia,serif;
+    font-size:13px;
+    cursor:pointer;
+    transition: 0.22s ease;
+    position:relative;
+    left:0;
+}
+.booklet-tab.active {
+    left:-10px;
+    z-index:3;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.09);
+}
+.booklet-tab:hover:not(.active) {
+    left:-4px;
 }
 
 /* Footer */
@@ -422,7 +425,7 @@ p {
 /* Motion reduce */
 @media (prefers-reduced-motion: reduce) {
     html {scroll-behavior:auto;}
-    * {transition:none !important;}
+    * {transition:none !important; animation:none !important;}
 }
 
 /* Tablet */
@@ -433,6 +436,28 @@ p {
     .heading-aside {margin-top:18px;}
     .section {padding:72px 7%;}
     .main-nav-group {width:100%; margin-top:12px; justify-content:flex-start;}
+
+    /* 移动端适配：标签放顶部横向 */
+    .booklet-container {flex-direction:column-reverse;}
+    .booklet-tabs {
+        width:100%;
+        display:flex;
+        gap:8px;
+        flex-wrap:wrap;
+        margin-bottom:20px;
+    }
+    .booklet-tab {
+        width:auto;
+        border-radius:10px;
+        margin:0;
+        left:0 !important;
+    }
+    .booklet-tab.active {
+        left:0;
+    }
+    .booklet {
+        border-radius:12px;
+    }
 }
 
 /* Mobile */
@@ -441,6 +466,6 @@ p {
     .topbar-note {display:none;}
     .interest-grid {grid-template-columns:1fr;}
     .section {padding:58px 6%;}
-    .reflection-title {align-items:flex-start;}
     .site-footer {flex-direction:column;text-align:center;}
+    .booklet {padding:24px; min-height:400px;}
 }
