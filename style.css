@@ -191,123 +191,90 @@ h2 span{
     color:var(--muted);
 }
 
-/* ========== WEEKLY REFLECTIONS｜莫兰迪｜上浅下深渐变 ========== */
-.reflections {
-    /* 上浅下深柔和莫兰迪渐变 */
-    background: linear-gradient(180deg, #f7efec 0%, #ede2dd 100%);
+/* ========== REFLECTIONS｜严格复刻参考图样式 ========== */
+.reflection-heading{
+    max-width:720px;
+    margin-bottom:40px;
+}
+.reflection-wrap{
+    position:relative;
+    max-width:1040px;
+    margin:0 auto;
+    /* 外层：粉紫柔和径向渐变底板，对应参考图背景 */
+    background: radial-gradient(circle at center, #fff0ef, #f2e6f2);
     border-radius:24px;
-    padding:70px 32px;
+    padding:42px;
+    box-shadow: 0 18px 45px rgba(162,124,140,0.1);
 }
-
-.reflection-heading {
-    max-width: 720px;
-    margin-bottom: 48px;
+.reflection-content-card{
+    background-color:#fff9f4;
+    border-radius:18px;
+    padding:48px;
+    min-height:640px;
+    box-shadow: 0 12px 30px rgba(145,112,120,0.08);
 }
-
-.booklet-container {
-    max-width: 1020px;
-    margin: 0 auto;
+.reflection-page{
+    display:none;
+    animation: fadeIn 0.3s ease;
 }
-
-.booklet {
-    position: relative;
-    display: flex;
-    align-items: stretch;
-    /* 内容框底色，莫兰迪暖灰，和侧边标签撞色 */
-    background: #f3ebe7;
-    border: 1px solid #e4d6d1;
-    border-radius: 20px 12px 12px 20px;
-    box-shadow: 0 22px 50px rgba(140, 110, 115, 0.11);
-    overflow: hidden;
+.reflection-page.active{
+    display:block;
 }
-
-.booklet-inner {
-    flex: 1;
-    padding: 50px 48px;
-    min-height: 620px;
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(8px);}
+    to{opacity:1;transform:translateY(0);}
 }
-
-.booklet-page {
-    display: none;
-    animation: bookletFade 0.3s ease;
+.reflection-page h3{
+    font-size:clamp(22px, 2.4vw,28px);
+    font-family:Georgia, serif;
+    color:#58434a;
+    margin-bottom:24px;
+    font-weight:normal;
 }
-.booklet-page.active {
-    display: block;
-}
-@keyframes bookletFade {
-    from {opacity:0; transform: translateY(8px);}
-    to {opacity:1; transform: translateY(0);}
-}
-
-.booklet-page h3 {
-    margin: 0 0 24px;
-    font-family: Georgia, serif;
-    font-size: clamp(20px,2.4vw,26px);
-    font-weight: normal;
-    color: #685258;
-}
-
-.reflection-description {
-    margin: 0 0 18px;
+.reflection-page p{
     font-size:15px;
     line-height:1.8;
     color:#6c5c62;
+    margin-bottom:18px;
 }
-
-.booklet-image {
-    margin-top:28px;
+.reflection-img{
+    margin-top:30px;
 }
-.booklet-image img {
+.reflection-img img{
     width:100%;
     border-radius:14px;
-    box-shadow: 0 12px 26px rgba(136,104,110,0.12);
+    box-shadow:0 10px 24px rgba(130,98,105,0.12);
 }
-.booklet-image span {
-    display:block;
-    margin-top:10px;
-    font-size:11px;
-    color:#928289;
-    letter-spacing:0.5px;
+/* 右侧悬浮书签标签组 */
+.reflection-tabs{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    right:-34px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
 }
-
-.booklet-tabs {
-    position: relative;
-    width:100px;
-    flex-shrink:0;
-    padding:20px 0 20px 10px;
-    background: #e9dfda;
-    border-left:1px solid #ddcdc8;
-}
-
-.booklet-tab {
-    position:relative;
-    z-index:1;
-    display:block;
-    width:90px;
-    padding:15px 8px;
-    margin:18px 0;
+.reflection-tab{
+    width:110px;
+    padding:16px 10px;
     border:none;
-    border-radius:0 12px 12px 0;
-    background: var(--tab-color);
-    color:#5f4b51;
+    border-radius:0 14px 14px 0;
+    background:var(--tab);
     font-family:Georgia, serif;
-    font-size:13px;
-    letter-spacing:0.4px;
+    font-size:14px;
+    color:#58434a;
     text-align:left;
     cursor:pointer;
-    transition: 0.25s ease;
+    transition: all 0.25s ease;
+    box-shadow:0 6px 14px rgba(130,98,105,0.09);
 }
-.booklet-tab:not(.active) {
-    left:4px;
-    box-shadow: 0 4px 10px rgba(120,95,100,0.07);
+.reflection-tab.active{
+    transform:translateX(-12px);
+    box-shadow:0 12px 24px rgba(130,98,105,0.16);
 }
-.booklet-tab.active {
-    z-index:3;
-    left:-8px;
-    box-shadow: 0 14px 30px rgba(120,95,100,0.16);
-}
-.booklet-tab:hover:not(.active) {
-    left:-2px;
+.reflection-tab:hover:not(.active){
+    transform:translateX(-5px);
 }
 
 /* === FOOTER === */
@@ -329,62 +296,48 @@ h2 span{
     color:#b88c98;
 }
 
-/* === MOBILE RESPONSIVE === */
-@media (max-width: 800px) {
-    .hero-grid{
-        grid-template-columns:1fr;
+/* === 移动端适配 === */
+@media(max-width:820px){
+    .hero-grid{grid-template-columns:1fr;}
+    .about{grid-template-columns:1fr;}
+    .interest-grid{grid-template-columns:1fr;}
+    .section-heading{flex-direction:column;align-items:flex-start;}
+    .main-nav-group{margin-left:unset;width:100%;justify-content:center;}
+
+    .reflection-wrap{
+        padding:26px;
     }
-    .about{
-        grid-template-columns:1fr;
+    .reflection-content-card{
+        padding:30px 24px;
+        min-height:480px;
     }
-    .interest-grid{
-        grid-template-columns:1fr;
-    }
-    .section-heading{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-    .main-nav-group{
-        margin-left:unset;
-        width:100%;
+    .reflection-tabs{
+        position:static;
+        transform:none;
+        flex-direction:row;
+        right:0;
+        margin-top:24px;
         justify-content:center;
     }
-
-    .booklet {
-        flex-direction: column-reverse;
-    }
-    .booklet-tabs {
-        width:100%;
-        display:flex;
-        gap:10px;
-        padding:16px;
-        border-left:none;
-        border-bottom:1px solid #ddcdc8;
-    }
-    .booklet-tab {
-        flex:1;
+    .reflection-tab{
         width:auto;
         border-radius:12px;
         text-align:center;
+        padding:12px 14px;
     }
-    .booklet-tab:not(.active),
-    .booklet-tab.active {
-        left:0;
+    .reflection-tab.active{
+        transform:translateY(-6px);
     }
-    .booklet-inner {
-        min-height: 480px;
-        padding:34px 28px;
-    }
-    .reflections {
-        padding:50px 20px;
+    .reflection-tab:hover:not(.active){
+        transform:translateY(-3px);
     }
 }
-@media (max-width: 520px) {
-    .booklet-inner {
-        padding:26px 22px;
+@media(max-width:520px){
+    .reflection-content-card{
+        padding:22px 18px;
     }
-    .booklet-tab {
+    .reflection-tab{
         font-size:12px;
-        padding:12px 6px;
+        padding:10px 8px;
     }
 }
