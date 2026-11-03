@@ -191,12 +191,12 @@ h2 span{
     color:var(--muted);
 }
 
-/* ========== 莫兰迪马卡龙小册子 + 右侧索引标签 ========== */
+/* ========== WEEKLY REFLECTIONS｜莫兰迪｜上浅下深渐变 ========== */
 .reflections {
-    background:
-        radial-gradient(circle at 100% 0%, rgba(215, 200, 240, 0.55), transparent 34%),
-        linear-gradient(180deg, #fdf4f2 0%, #fbf6f0 100%);
-    border-radius:22px;
+    /* 上浅下深柔和莫兰迪渐变 */
+    background: linear-gradient(180deg, #f7efec 0%, #ede2dd 100%);
+    border-radius:24px;
+    padding:70px 32px;
 }
 
 .reflection-heading {
@@ -204,13 +204,8 @@ h2 span{
     margin-bottom: 48px;
 }
 
-.reflection-intro {
-    max-width: 520px;
-    color: var(--muted);
-}
-
 .booklet-container {
-    max-width: 960px;
+    max-width: 1020px;
     margin: 0 auto;
 }
 
@@ -218,140 +213,101 @@ h2 span{
     position: relative;
     display: flex;
     align-items: stretch;
-
-    background:
-        linear-gradient(180deg, #fdf6f3 0%, #fbf1ef 45%, #f7ebe8 100%);
-
-    border: 1px solid #efdfdb;
-    border-radius: 18px 10px 10px 18px;
-
-    box-shadow:
-        0 20px 45px rgba(165, 116, 126, 0.12),
-        0 6px 18px rgba(165, 116, 126, 0.08);
-
+    /* 内容框底色，莫兰迪暖灰，和侧边标签撞色 */
+    background: #f3ebe7;
+    border: 1px solid #e4d6d1;
+    border-radius: 20px 12px 12px 20px;
+    box-shadow: 0 22px 50px rgba(140, 110, 115, 0.11);
     overflow: hidden;
 }
 
 .booklet-inner {
     flex: 1;
-    padding: 44px 40px 40px;
-    min-height: 540px;
+    padding: 50px 48px;
+    min-height: 620px;
 }
 
 .booklet-page {
     display: none;
-    animation: bookletFade 0.32s ease;
+    animation: bookletFade 0.3s ease;
 }
-
 .booklet-page.active {
     display: block;
 }
-
 @keyframes bookletFade {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from {opacity:0; transform: translateY(8px);}
+    to {opacity:1; transform: translateY(0);}
 }
 
 .booklet-page h3 {
-    margin: 0 0 22px;
-
+    margin: 0 0 24px;
     font-family: Georgia, serif;
-    font-size: clamp(20px, 2.4vw, 25px);
+    font-size: clamp(20px,2.4vw,26px);
     font-weight: normal;
-    line-height: 1.35;
-    color: #6b535a;
+    color: #685258;
 }
 
 .reflection-description {
-    margin: 0 0 16px;
-
-    font-size: 14px;
-    line-height: 1.8;
-    color: #6f6168;
-
-    text-align: justify;
-    text-justify: inter-word;
+    margin: 0 0 18px;
+    font-size:15px;
+    line-height:1.8;
+    color:#6c5c62;
 }
 
 .booklet-image {
-    margin-top: 24px;
+    margin-top:28px;
 }
-
 .booklet-image img {
-    width: 100%;
-    border-radius: 14px;
-
-    box-shadow:
-        0 10px 24px rgba(148, 107, 116, 0.14),
-        0 2px 6px rgba(148, 107, 116, 0.08);
+    width:100%;
+    border-radius:14px;
+    box-shadow: 0 12px 26px rgba(136,104,110,0.12);
 }
-
 .booklet-image span {
-    display: block;
-    margin-top: 10px;
-
-    font-size: 11px;
-    color: #928289;
-    letter-spacing: 0.5px;
+    display:block;
+    margin-top:10px;
+    font-size:11px;
+    color:#928289;
+    letter-spacing:0.5px;
 }
 
 .booklet-tabs {
     position: relative;
-    width: 96px;
-    flex-shrink: 0;
-
-    padding: 18px 0 18px 10px;
-
-    background: linear-gradient(180deg, #f7ece7 0%, #efe0df 100%);
-    border-left: 1px solid #eed9d4;
+    width:100px;
+    flex-shrink:0;
+    padding:20px 0 20px 10px;
+    background: #e9dfda;
+    border-left:1px solid #ddcdc8;
 }
 
 .booklet-tab {
-    position: relative;
-    z-index: 1;
-
-    display: block;
-    width: 86px;
-    padding: 14px 8px;
-    margin: 16px 0;
-
-    border: none;
-    border-radius: 0 12px 12px 0;
-
+    position:relative;
+    z-index:1;
+    display:block;
+    width:90px;
+    padding:15px 8px;
+    margin:18px 0;
+    border:none;
+    border-radius:0 12px 12px 0;
     background: var(--tab-color);
-    color: #6b535a;
-
-    font-family: Georgia, serif;
-    font-size: 13px;
-    letter-spacing: 0.5px;
-    text-align: left;
-
-    cursor: pointer;
+    color:#5f4b51;
+    font-family:Georgia, serif;
+    font-size:13px;
+    letter-spacing:0.4px;
+    text-align:left;
+    cursor:pointer;
     transition: 0.25s ease;
 }
-
 .booklet-tab:not(.active) {
-    left: 4px;
-    box-shadow: 0 4px 10px rgba(148, 107, 116, 0.08);
+    left:4px;
+    box-shadow: 0 4px 10px rgba(120,95,100,0.07);
 }
-
 .booklet-tab.active {
-    z-index: 3;
-    left: -8px;
-
-    box-shadow:
-        0 14px 28px rgba(148, 107, 116, 0.18),
-        0 4px 10px rgba(148, 107, 116, 0.12);
+    z-index:3;
+    left:-8px;
+    box-shadow: 0 14px 30px rgba(120,95,100,0.16);
 }
-
 .booklet-tab:hover:not(.active) {
-    left: -2px;
+    left:-2px;
 }
 
 /* === FOOTER === */
@@ -373,7 +329,7 @@ h2 span{
     color:#b88c98;
 }
 
-/* === MOBILE === */
+/* === MOBILE RESPONSIVE === */
 @media (max-width: 800px) {
     .hero-grid{
         grid-template-columns:1fr;
@@ -397,51 +353,38 @@ h2 span{
     .booklet {
         flex-direction: column-reverse;
     }
-
     .booklet-tabs {
-        width: 100%;
-        display: flex;
-        gap: 10px;
-
-        padding: 16px;
-        border-left: none;
-        border-bottom: 1px solid #eed9d4;
+        width:100%;
+        display:flex;
+        gap:10px;
+        padding:16px;
+        border-left:none;
+        border-bottom:1px solid #ddcdc8;
     }
-
     .booklet-tab {
-        flex: 1;
-        width: auto;
-
-        border-radius: 12px;
-        text-align: center;
+        flex:1;
+        width:auto;
+        border-radius:12px;
+        text-align:center;
     }
-
-    .booklet-tab:not(.active) {
-        left: 0;
-    }
-
+    .booklet-tab:not(.active),
     .booklet-tab.active {
-        left: 0;
+        left:0;
     }
-
     .booklet-inner {
-        min-height: 460px;
-        padding: 32px 26px 28px;
+        min-height: 480px;
+        padding:34px 28px;
+    }
+    .reflections {
+        padding:50px 20px;
     }
 }
-
 @media (max-width: 520px) {
     .booklet-inner {
-        padding: 26px 22px 24px;
+        padding:26px 22px;
     }
-
-    .booklet-tabs {
-        padding: 12px;
-        gap: 8px;
-    }
-
     .booklet-tab {
-        font-size: 12px;
-        padding: 12px 6px;
+        font-size:12px;
+        padding:12px 6px;
     }
 }
