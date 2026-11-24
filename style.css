@@ -41,7 +41,7 @@ img {
 
 .topbar {
     max-width: 1180px;
-    margin: 0 auto 40px;
+    margin: 0 auto 30px;
     padding: 24px 32px 18px;
     border-bottom: 1px solid var(--line);
     display: flex;
@@ -95,36 +95,36 @@ img {
 /* ===== HERO ===== */
 
 .hero {
-    padding: 70px 24px 80px;
+    padding: 50px 24px 70px;
 }
 
 .hero-grid {
-    max-width: 1200px;
+    max-width: 1180px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1.25fr 0.75fr;
-    gap: 60px;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 50px;
     align-items: center;
 }
 
 .hero-copy {
-    padding: 10px 0 10px 40px;
+    padding: 10px 0 10px 30px;
 }
 
 .eyebrow {
     font-size: 11px;
     letter-spacing: 4px;
     color: var(--rose);
-    margin-bottom: 14px;
+    margin-bottom: 12px;
 }
 
 .hero-copy h1 {
-    font-size: clamp(84px, 10vw, 140px);
+    font-size: clamp(52px, 7vw, 72px);
     font-weight: 400;
-    line-height: 0.95;
-    letter-spacing: -6px;
+    line-height: 1;
+    letter-spacing: -3px;
     color: var(--brown);
-    margin-bottom: 24px;
+    margin-bottom: 18px;
 }
 
 .hero-copy h1 span {
@@ -135,8 +135,8 @@ img {
 .intro {
     font-size: 15px;
     color: var(--muted);
-    max-width: 420px;
-    margin-bottom: 28px;
+    max-width: 400px;
+    margin-bottom: 24px;
     line-height: 1.8;
 }
 
@@ -155,7 +155,7 @@ img {
 }
 
 .hero-note {
-    margin-top: 30px;
+    margin-top: 24px;
     font-size: 11px;
     letter-spacing: 3px;
     color: var(--muted);
@@ -192,8 +192,8 @@ img {
 }
 
 .hero-bottom {
-    max-width: 1100px;
-    margin: 60px auto 0;
+    max-width: 1180px;
+    margin: 50px auto 0;
     padding-top: 18px;
     border-top: 1px solid var(--line);
     display: flex;
@@ -219,7 +219,7 @@ img {
 }
 
 h2 {
-    font-size: clamp(32px, 3.6vw, 44px);
+    font-size: clamp(30px, 3.4vw, 40px);
     font-weight: 400;
     letter-spacing: -1px;
     color: var(--brown);
@@ -523,8 +523,8 @@ h2 span {
     }
 
     .hero-copy h1 {
-        font-size: clamp(56px, 14vw, 82px);
-        letter-spacing: -4px;
+        font-size: clamp(52px, 12vw, 72px);
+        letter-spacing: -3px;
     }
 
     .intro {
@@ -605,8 +605,8 @@ h2 span {
 
 @media (max-width: 520px) {
     .hero-copy h1 {
-        font-size: 52px;
-        letter-spacing: -3px;
+        font-size: 48px;
+        letter-spacing: -2px;
     }
 
     .reflection-content {
