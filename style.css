@@ -95,13 +95,20 @@ a{
     color:#948288;
     letter-spacing:1px;
 }
+.hero-art{
+    max-width:300px;
+    margin:0 auto;
+}
 .art-frame{
     overflow:hidden;
-    border-radius:22px;
+    border-radius:999px 999px 18px 18px;
     box-shadow: 0 10px 24px rgba(145,112,120,0.08);
 }
 .art-frame img{
     width:100%;
+    aspect-ratio:3/4;
+    object-fit:cover;
+    display:block;
     transition:0.4s ease;
 }
 .art-frame img:hover{
