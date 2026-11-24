@@ -102,7 +102,7 @@ img {
     max-width: 1180px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 50px;
     align-items: center;
 }
@@ -163,9 +163,14 @@ img {
 
 .hero-art {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .art-frame {
+    max-width: 380px;
+    width: 100%;
     border-radius: 28px;
     overflow: hidden;
     box-shadow: 0 14px 34px rgba(145, 112, 120, 0.1);
@@ -188,7 +193,7 @@ img {
     font-size: 11px;
     letter-spacing: 2px;
     color: var(--muted);
-    padding-left: 18px;
+    text-align: center;
 }
 
 .hero-bottom {
@@ -255,6 +260,7 @@ h2 span {
 }
 
 .portrait-frame {
+    max-width: 380px;
     border-radius: 28px;
     overflow: hidden;
     box-shadow: 0 14px 34px rgba(145, 112, 120, 0.1);
@@ -540,8 +546,7 @@ h2 span {
     }
 
     .art-frame {
-        margin: 0 auto;
-        max-width: 340px;
+        max-width: 320px;
     }
 
     .hero-bottom {
@@ -553,6 +558,11 @@ h2 span {
     .about {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+
+    .portrait-frame {
+        max-width: 320px;
+        margin: 0 auto;
     }
 
     .interest-grid {
