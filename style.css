@@ -41,8 +41,8 @@ img {
 
 .topbar {
     max-width: 1180px;
-    margin: 0 auto;
-    padding: 24px 32px 14px;
+    margin: 0 auto 40px;
+    padding: 24px 32px 18px;
     border-bottom: 1px solid var(--line);
     display: flex;
     align-items: center;
